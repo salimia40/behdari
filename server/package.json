@@ -1,0 +1,44 @@
+{
+  "name": "behdari",
+  "version": "1.0.0",
+  "description": "an app for maaging dungs an equipment in behdari",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron start",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "electron-squirrel-startup": "^1.0.0",
+    "express": "^4.17.1",
+    "sequelize": "^5.22.4",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "electron": "^13.1.4",
+    "electron-builder": "^22.11.7",
+    "sequelize-cli": "^6.2.0"
+  },
+
+  "build": {
+    "appId": "ir.puyaars.id",
+    "mac": {
+      "category": "utility"
+    },
+    "win" : {
+      "target": "msi",
+      "icon" : "/icon.png",
+      "author" : "puyaars"
+    },
+    "extraFiles": [
+      "public"
+    ]
+  }
+}

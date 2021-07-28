@@ -1,0 +1,70 @@
+### GET all the drugs in the store
+GET http://localhost:8080/store
+###
+GET http://localhost:8080/Drugs
+###
+GET http://localhost:8080/Drugs/16
+
+### get store drug by id
+GET  http://localhost:8080/store/1
+
+###
+POST http://localhost:8080/store
+Content-Type: application/json
+
+{
+    "DrugId" : 1,
+    "amount" : 100,
+    "inventory" : "store"
+}
+
+### create a transaction
+POST http://localhost:8080/transaction
+Content-Type: application/json
+
+{
+    "to" : "store",
+    "transactionDrugs" : [
+        {
+        "drug" : "parastamol",
+        "amount" : 25
+    },
+    {
+        "drug" : "parastamol 24",
+        "amount" : 25
+    }
+    ]
+}
+
+###
+GET http://localhost:8080/transaction/1
+
+###
+
+POST  http://localhost:8080/drugtype
+Content-Type: application/json
+
+{
+    "title" : "Tablet",
+    "unit" :  "tab"
+}
+###
+
+POST  http://localhost:8080/room
+Content-Type: application/json
+
+{
+    "title" : "مطب"
+}
+###
+POST  http://localhost:8080/equipment
+Content-Type: application/json
+
+{
+    "title" : "گوشی پزشکی",
+    "RoomId" : 1
+}
+
+###
+
+GET http://localhost:8080/room/1
